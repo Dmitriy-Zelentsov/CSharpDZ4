@@ -3,10 +3,16 @@
 //82 -> 10
 //9012 -> 12
 
-void FindSum (int num)
+int FindSum (int num)
 {
-string num_tostring = num.ToString();
-
-Console.WriteLine(num_tostring);
+    int sum = 0;
+    while(num > 0)
+    {
+        sum += num % 10;
+        num /= 10;
+    }
+    return sum;
 }
-FindSum (9012);
+
+int result = FindSum (9012);
+Console.WriteLine ($"Сумма всех цифр числа равна {result}");
